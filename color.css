@@ -1,0 +1,96 @@
+body{
+	background: #232323;
+	margin: 0px;
+	-webkit-animation: mymove 5s infinite;
+	animation: mymove 5s infinite;
+	animation-fill-mode: initial;
+	/* animation-play-state:  */
+	animation-delay: 1s;
+	animation-timing-function: ease;
+	-webkit-animation-fill-mode: initial;
+	-webkit-animation-delay: 1s;
+	-webkit-animation-timing-function: ease;
+	/* -webkit-appearance: scrollbarbutton-down; */
+	
+
+}
+
+.square{
+	/*height:50px;*/
+	width:30%;
+	background: purple;
+	float :left;
+	padding-bottom: 30%;
+	margin:1.66%;
+	border-radius: 15%;
+	margin-top:30px;
+}
+.square:hover{
+	/* transition-duration: 1s; */
+	transition: all 0.7s;
+	/* transition-duration:  */
+	/* transform: rotateX(180deg);
+	transform: scale(1.1); */
+	transform: scale(1.1);
+}
+.container{
+	/*float: center;*/
+	margin:0px auto;
+	/*max-width: 600px;*/
+	width: 650px;
+}
+h1{
+	color:white;
+	text-align: center;
+	padding:20px 20px 20px 20px;
+	background: #6798FF;
+	background-size: cover;
+	margin:0px 0px 0px 0px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-style: bold,italic;
+	font-size: 60px;
+	text-transform: uppercase;
+}
+h3{
+	color:white;
+	text-align: center;
+	padding:20px 20px 20px 20px;
+	background: #6798FF;
+	background-size: cover;
+	margin:0px 0px 0px 0px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-style: bold,italic;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+h1:hover,h3:hover{
+	color:rgb(239, 255, 10);
+}
+.bar{
+	text-align: center;
+	background: white;
+}
+.selected{
+	background: #6798FF;
+}
+button{
+	border: none;
+	background: none;
+	text-transform: uppercase;
+	height:30px;
+	letter-spacing: 1px;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+	font-weight: bold;
+	outline: none;
+}
+.result{
+	display: inline-block;
+	width:18%;
+}
+button:hover{
+	transition: all 0.5s;
+}
+.reset{
+	color:#6798FF;
+}
