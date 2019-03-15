@@ -6,8 +6,10 @@ var res = document.querySelector(".result");
 var resetbutton = document.querySelector(".reset");
 var easybtn = document.querySelector("#easybtn");
 var hardbtn = document.querySelector("#hardbtn");
+var red = document.querySelector(".red"),green = document.querySelector(".green"),blue = document.querySelector(".blue");
 var u = 0,g = 1;
 heading.textContent = pickedcolor;
+percentage(pickedcolor);
 hardbtn.style.color = "white";
 easybtn.style.color = "#6798FF";
 main();
@@ -25,6 +27,7 @@ easybtn.addEventListener("click",function(){
 	easybtn.style.backgroundColor = "#6798FF";
 	hardbtn.style.color = "#6798FF";
 	heading.textContent = pickedcolor;
+	percentage(pickedcolor);
 	resetbutton.style.color = "#6798FF";
 	resetbutton.style.backgroundColor = "white";
 	for(var i=0;i<squares.length;i++){
@@ -67,6 +70,7 @@ hardbtn.addEventListener("click",function(){
 	colors = randomgenerator(9);
 	pickedcolor = randompicker();
 	heading.textContent = pickedcolor;
+	percentage(pickedcolor);
 	resetbutton.style.color = "#6798FF";
 	resetbutton.style.backgroundColor = "white";
 	main();
@@ -128,6 +132,7 @@ resetbutton.addEventListener("click",function(){
 	colors = randomgenerator(9);
 	pickedcolor = randompicker();
 	heading.textContent = pickedcolor;
+	percentage(pickedcolor);
 	main();
 	resetbutton.textContent = "MORE COLORS";
 	heading2.style.backgroundColor = "#6798FF";
@@ -169,3 +174,19 @@ hardbtn.addEventListener("mouseover",function(){
 	this.style.backgroundColor = "#6798FF";
 	}
 });
+function percentage(pickedcolor){
+	var r,gre,b;
+r = pickedcolor.slice(4,pickedcolor.indexOf(","));
+pickedcolor = pickedcolor.slice(pickedcolor.indexOf(",")+1);
+gre = pickedcolor.slice(0,0+pickedcolor.indexOf(","));
+pickedcolor = pickedcolor.slice(pickedcolor.indexOf(",")+1);
+b = pickedcolor.slice(0,0+pickedcolor.indexOf(")"));
+var total = 0;
+r = Number(r);
+gre = Number(gre);
+b=Number(b);
+	total = r+gre+b;
+red.textContent = Math.round((r*100)/total+1);
+	green.textContent = Math.round((gre*100)/total+1);
+	blue.textContent = Math.round((b*100)/total+1);
+}
