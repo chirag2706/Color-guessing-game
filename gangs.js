@@ -7,6 +7,7 @@ var resetbutton = document.querySelector(".reset");
 var easybtn = document.querySelector("#easybtn");
 var hardbtn = document.querySelector("#hardbtn");
 var u = 0,g = 1;
+var red = document.querySelector(".red"),green = document.querySelector(".green"),blue = document.querySelector(".blue");
 var index = [1,2,3,4,5,6,7,8,9];
 heading.textContent = pickedcolor;
 hardbtn.style.color = "white";
@@ -116,7 +117,8 @@ function rand(){
 function randomgenerator(x){
 	var arr = [];
 	for(var i=0;i<x;i++){
-		var t = "rgb("+rand()+", "+rand()+", "+rand()+")";
+		var r = rand(),y = rand(),z = rand();
+		var t = "rgb("+r+", "+y+", "+z+")";
 		arr.push(t);
 	
 	}
@@ -171,3 +173,28 @@ hardbtn.addEventListener("mouseover",function(){
 	this.style.backgroundColor = "#6798FF";
 	}
 });
+// function percentage(){
+var r='',gr='',b='',cu=0;
+for(var i=4;i<pickedcolor.length;i++){
+	if (pickedcolor[i]!=','){
+		if (cu === 0)
+		r = r+pickedcolor[i];
+		else if (cu === 1)
+			gr= gr + pickedcolor[i];
+		else if (cu === 2){
+			b+=pickedcolor[i];
+			break;
+			}	
+		}
+	else	{
+		i++;
+		cu+=1;
+			}
+	}
+r = Number(r);
+gr = Number(gr);
+b = Number(b);
+red.textContent = r;
+green.textContent = gr;
+blue.textContent = b;
+
