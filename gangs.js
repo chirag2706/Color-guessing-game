@@ -10,6 +10,7 @@ var u = 0,g = 1;
 var red = document.querySelector(".red"),green = document.querySelector(".green"),blue = document.querySelector(".blue");
 var index = [1,2,3,4,5,6,7,8,9];
 heading.textContent = pickedcolor;
+percentage(pickedcolor);
 hardbtn.style.color = "white";
 easybtn.style.color = "#6798FF";
 main();
@@ -182,21 +183,7 @@ hardbtn.addEventListener("mouseover",function(){
 function percentage(pickedcolor){
 var r='',gre='',b='',cu=0;
 for(var i=4;i<pickedcolor.length;i++){
-	// if (pickedcolor[i]!=','){
-	// 	if (cu === 0)
-	// 	r = r+pickedcolor[i];
-	// 	else if (cu === 1)
-	// 		gre= gre + pickedcolor[i];
-	// 	else if (cu === 2){
-	// 		b= b + pickedcolor[i];
-	// 		}	
-	// 	else
-	// 		break;
-	// 	}
-	// else	{
-	// 	i++;
-	// 	cu+=1;
-	// 		}
+	
 	if (pickedcolor[i]==","){
 		i+=2;
 		cu+=1;
@@ -227,12 +214,12 @@ b = (b/total)*100;
 r = String(r)
 r=r.slice(0,0+r.indexOf(".")+2);
 r= Number(r);
-gre = String(gre)
+// gre = String(gre)
 gre=gre.slice(0,0+gre.indexOf(".")+2);
-gre = Number(gre);
+// gre = Number(gre);
 b = String(b)
 b=b.slice(0,0+b.indexOf(".")+2);
-b = Number(b);
+// b = Number(b);
 
 
 red.textContent = r;
