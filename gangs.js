@@ -182,21 +182,37 @@ hardbtn.addEventListener("mouseover",function(){
 function percentage(pickedcolor){
 var r='',gre='',b='',cu=0;
 for(var i=4;i<pickedcolor.length;i++){
-	if (pickedcolor[i]!=','){
-		if (cu === 0)
-		r = r+pickedcolor[i];
-		else if (cu === 1)
-			gre= gre + pickedcolor[i];
-		else if (cu === 2){
-			b+=pickedcolor[i];
-			}	
-		else
-			break;
-		}
-	else	{
-		i++;
+	// if (pickedcolor[i]!=','){
+	// 	if (cu === 0)
+	// 	r = r+pickedcolor[i];
+	// 	else if (cu === 1)
+	// 		gre= gre + pickedcolor[i];
+	// 	else if (cu === 2){
+	// 		b= b + pickedcolor[i];
+	// 		}	
+	// 	else
+	// 		break;
+	// 	}
+	// else	{
+	// 	i++;
+	// 	cu+=1;
+	// 		}
+	if (pickedcolor[i]==","){
+		i+=2;
 		cu+=1;
-			}
+	}else{
+		if (cu === 0)
+			r = r+pickedcolor[i];
+		else if (cu === 1)
+			gre = gre+pickedcolor[i];
+		else if (cu == 2){
+			if (pickedcolor[i] == ")")
+				break;
+			else
+			b = b+pickedcolor[i];
+		}
+			
+	}
 	}
 r = Number(r);
 gre = Number(gre);
