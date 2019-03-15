@@ -5,21 +5,25 @@ var heading = document.querySelector(".correct"),heading2 = document.querySelect
 var res = document.querySelector(".result");
 var resetbutton = document.querySelector(".reset");
 var easybtn = document.querySelector("#easybtn");
+var mediumbtn = document.querySelector("#mediumbtn");
 var hardbtn = document.querySelector("#hardbtn");
-var u = 0,g = 1;
+var u = 0,g = 1,m=0;
 var red = document.querySelector(".red"),green = document.querySelector(".green"),blue = document.querySelector(".blue");
 var index = [1,2,3,4,5,6,7,8,9];
 heading.textContent = pickedcolor;
 percentage(pickedcolor);
 hardbtn.style.color = "white";
 easybtn.style.color = "#6798FF";
+mediumbtn.style.color = "#6798FF";
 main();
 easybtn.addEventListener("click",function(){
 	u = 1;
 	g = 0;
+	m=0;
 	// hardbtn.classList.remove("selected");
 	// easybtn.classList.add("selected") ;
 	hardbtn.style.backgroundColor = "white";
+	mediumbtn.style.backgroundColor = "white";
 	// hardbtn.style.color = 
 	easybtn.style.color = "#6798FF";
 	colors = randomgenerator(3);
@@ -28,6 +32,7 @@ easybtn.addEventListener("click",function(){
 	easybtn.style.color = "white";
 	easybtn.style.backgroundColor = "#6798FF";
 	hardbtn.style.color = "#6798FF";
+	mediumbtn.style.color = "#6798FF";
 	heading.textContent = pickedcolor;
 	resetbutton.style.color = "#6798FF";
 	resetbutton.style.backgroundColor = "white";
@@ -66,13 +71,39 @@ percentage(pickedcolor);
 hardbtn.addEventListener("click",function(){
 	u = 0;
 	g = 1;
+	m=0;
 	// easybtn.classList.remove("selected");
 	// hardbtn.classList.add("selected") ;
 	hardbtn.style.color = "white";
 	hardbtn.style.backgroundColor = "#6798FF";
 	easybtn.style.color = "#6798FF";
 	easybtn.style.backgroundColor = "white";
+	mediumbtn.style.color = "#6798FF";
+	mediumbtn.style.backgroundColor = "white";
 	colors = randomgenerator(9);
+	pickedcolor = randompicker();
+	heading.textContent = pickedcolor;
+// 	percentage(pickedcolor);
+	percentage(pickedcolor);
+	resetbutton.style.color = "#6798FF";
+	resetbutton.style.backgroundColor = "white";
+	main();
+	
+});
+
+mediumbtn.addEventListener("click",function(){
+	u = 0;
+	g = 0;
+	m=1;
+	// easybtn.classList.remove("selected");
+	// hardbtn.classList.add("selected") ;
+	mediumbtn.style.color = "white";
+	mediumbtn.style.backgroundColor = "#6798FF";
+	easybtn.style.color = "#6798FF";
+	easybtn.style.backgroundColor = "white";
+	hardbtn.style.color = "#6798FF";
+	hardbtn.style.backgroundColor = "white";
+	colors = randomgenerator(6);
 	pickedcolor = randompicker();
 	heading.textContent = pickedcolor;
 // 	percentage(pickedcolor);
@@ -138,6 +169,7 @@ function randomgenerator(x){
 resetbutton.addEventListener("click",function(){
 	hardbtn.classList.add('selected');
 	easybtn.classList.remove('selected');
+	medium.classList.remove("selected");
 	colors = randomgenerator(9);
 	pickedcolor = randompicker();
 	heading.textContent = pickedcolor;
@@ -151,6 +183,8 @@ resetbutton.addEventListener("click",function(){
 	easybtn.style.color = "#6798FF";
 	easybtn.style.backgroundColor = "white";
 	hardbtn.style.backgroundColor = "#6798FF";
+	mediumbtn.style.color = "#6798FF";
+	mediumbtn.style.backgroundColor = "white";
 	percentage(pickedcolor);
 	// resetbutton.style.color = "white";
 	// resetbutton.style.backgroundColor ="#6798FF" ;
@@ -164,22 +198,33 @@ resetbutton.addEventListener("mouseout",function(){
 	this.style.color = "#6798FF";
 });
 easybtn.addEventListener("mouseout",function(){
-	if (u === 0)
+	if (u === 0 && m === 0)
 	{this.style.backgroundColor = "white";
 	this.style.color = "#6798FF";}
 });
 easybtn.addEventListener("mouseover",function(){
-	if (u === 0){
+	if (u === 0 && m === 0){
 	this.style.color = "white";
 	this.style.backgroundColor = "#6798FF";}
 });
 hardbtn.addEventListener("mouseout",function(){
-	if (g === 0){
+	if (g === 0 && m === 0){
 	this.style.backgroundColor = "white";
 	this.style.color = "#6798FF";}
 });
 hardbtn.addEventListener("mouseover",function(){
-	if (g === 0){
+	if (g === 0 && m === 0){
+	this.style.color = "white";
+	this.style.backgroundColor = "#6798FF";
+	}
+});
+mediumbtn.addEventListener("mouseout",function(){
+	if (g === 0 && u === 0){
+	this.style.backgroundColor = "white";
+	this.style.color = "#6798FF";}
+});
+mediumbtn.addEventListener("mouseover",function(){
+	if (g === 0 && u === 0){
 	this.style.color = "white";
 	this.style.backgroundColor = "#6798FF";
 	}
