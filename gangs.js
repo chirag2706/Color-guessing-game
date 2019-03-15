@@ -10,7 +10,7 @@ var u = 0,g = 1;
 var red = document.querySelector(".red"),green = document.querySelector(".green"),blue = document.querySelector(".blue");
 var index = [1,2,3,4,5,6,7,8,9];
 heading.textContent = pickedcolor;
-// percentage(pickedcolor);
+percentage(pickedcolor);
 hardbtn.style.color = "white";
 easybtn.style.color = "#6798FF";
 main();
@@ -24,6 +24,7 @@ easybtn.addEventListener("click",function(){
 	easybtn.style.color = "#6798FF";
 	colors = randomgenerator(3);
 	pickedcolor = randompicker();
+	percentage(pickedcolor);
 	easybtn.style.color = "white";
 	easybtn.style.backgroundColor = "#6798FF";
 	hardbtn.style.color = "#6798FF";
@@ -74,6 +75,7 @@ hardbtn.addEventListener("click",function(){
 	colors = randomgenerator(9);
 	pickedcolor = randompicker();
 	heading.textContent = pickedcolor;
+	percentage(pickedcolor);
 	resetbutton.style.color = "#6798FF";
 	resetbutton.style.backgroundColor = "white";
 	main();
@@ -138,6 +140,7 @@ resetbutton.addEventListener("click",function(){
 	colors = randomgenerator(9);
 	pickedcolor = randompicker();
 	heading.textContent = pickedcolor;
+	percentage(pickedcolor);
 	main();
 	resetbutton.textContent = "MORE COLORS";
 	heading2.style.backgroundColor = "#6798FF";
