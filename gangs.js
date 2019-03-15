@@ -181,50 +181,7 @@ hardbtn.addEventListener("mouseover",function(){
 });
 // function percentage(){
 function percentage(pickedcolor){
-var r='',gre='',b='',cu=0;
-for(var i=4;i<pickedcolor.length;i++){
-	
-	if (pickedcolor[i]==","){
-		i+=2;
-		cu+=1;
-	}else{
-		if (cu === 0)
-			r = r+pickedcolor[i];
-		else if (cu === 1)
-			gre = gre+pickedcolor[i];
-		else if (cu == 2){
-			if (pickedcolor[i] == ")")
-				break;
-			else
-			b = b+pickedcolor[i];
-		}
-			
-	}
-	}
-r = Number(r);
-gre = Number(gre);
-b = Number(b);
 
-var total = r+gre+b;
-r = (r/total)*100;
-gre = (gre/total)*100;
-b = (b/total)*100;
-
-
-r = String(r)
-r=r.slice(0,0+r.indexOf(".")+2);
-r= Number(r);
-// gre = String(gre)
-gre=gre.slice(0,0+gre.indexOf(".")+2);
-// gre = Number(gre);
-b = String(b)
-b=b.slice(0,0+b.indexOf(".")+2);
-// b = Number(b);
-
-
-red.textContent = r;
-green.textContent = gre;
-blue.textContent = b;
 }
 
 
