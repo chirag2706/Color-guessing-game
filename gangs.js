@@ -180,3 +180,14 @@ hardbtn.addEventListener("mouseover",function(){
 	this.style.backgroundColor = "#6798FF";
 	}
 });
+function percentage(pickedcolor){
+	var x,r,gre,b;
+	r = pickedcolor.slice(4,pickedcolor.indexOf(","));
+	pickedcolor = pickedcolor.slice(pickedcolor.indexOf(",")+1);
+	gre = pickedcolor.slice(0,0+pickedcolor.indexOf(","));
+	pickedcolor = pickedcolor.slice(pickedcolor.indexOf(",")+1);
+	b = pickedcolor.slice(0,0+pickedcolor(")"));
+	console.log(r);
+	console.log(gre);
+	console.log(b);
+}
