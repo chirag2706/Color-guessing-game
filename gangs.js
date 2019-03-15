@@ -194,7 +194,8 @@ for(var i=4;i<pickedcolor.length;i++){
 r = Number(r);
 gr = Number(gr);
 b = Number(b);
-red.textContent = r;
-green.textContent = gr;
-blue.textContent = b;
+var total = r+gr+b
+red.textContent = r/total;
+green.textContent = gr/total;
+blue.textContent = b/total;
 
