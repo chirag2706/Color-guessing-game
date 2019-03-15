@@ -38,6 +38,7 @@ easybtn.addEventListener("click",function(){
 					heading.textContent = clickedcolor;
 					res.textContent = "CORRECT ";
 					colorall(clickedcolor);
+					
 					for(var i=3;i<squares.length;i++){
 						squares[i].style.backgroundColor = "#232323";
 					}
