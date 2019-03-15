@@ -75,11 +75,12 @@ hardbtn.addEventListener("click",function(){
 	colors = randomgenerator(9);
 	pickedcolor = randompicker();
 	heading.textContent = pickedcolor;
+// 	percentage(pickedcolor);
 	percentage(pickedcolor);
 	resetbutton.style.color = "#6798FF";
 	resetbutton.style.backgroundColor = "white";
 	main();
-	// percentage(pickedcolor);
+	
 });
 
 
@@ -150,7 +151,7 @@ resetbutton.addEventListener("click",function(){
 	easybtn.style.color = "#6798FF";
 	easybtn.style.backgroundColor = "white";
 	hardbtn.style.backgroundColor = "#6798FF";
-	// percentage(pickedcolor);
+	percentage(pickedcolor);
 	// resetbutton.style.color = "white";
 	// resetbutton.style.backgroundColor ="#6798FF" ;
 })
@@ -189,8 +190,8 @@ function percentage(pickedcolor){
 	pickedcolor = pickedcolor.slice(pickedcolor.indexOf(",")+1);
 	gre = pickedcolor.slice(0,0+pickedcolor.indexOf(","));
 	pickedcolor = pickedcolor.slice(pickedcolor.indexOf(",")+1);
-	b = pickedcolor.slice(0,0+pickedcolor(")"));
-	console.log(r);
-	console.log(gre);
-	console.log(b);
+	b = pickedcolor.slice(0,0+pickedcolor.indexOf(")"));
+	red.textContent  = r;
+	green.textContent = gre;
+	blue.textContent = b;
 }
