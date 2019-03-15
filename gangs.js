@@ -91,28 +91,56 @@ hardbtn.addEventListener("click",function(){
 	
 });
 
-mediumbtn.addEventListener("click",function(){
+easybtn.addEventListener("click",function(){
 	u = 0;
 	g = 0;
 	m=1;
-	// easybtn.classList.remove("selected");
-	// hardbtn.classList.add("selected") ;
-	mediumbtn.style.color = "white";
-	mediumbtn.style.backgroundColor = "#6798FF";
-	easybtn.style.color = "#6798FF";
-	easybtn.style.backgroundColor = "white";
-	hardbtn.style.color = "#6798FF";
+	// hardbtn.classList.remove("selected");
+	// easybtn.classList.add("selected") ;
 	hardbtn.style.backgroundColor = "white";
+	mediumbtn.style.backgroundColor = "#6798FF";
+	// hardbtn.style.color = 
+	easybtn.style.color = "white";
 	colors = randomgenerator(6);
 	pickedcolor = randompicker();
-	heading.textContent = pickedcolor;
-// 	percentage(pickedcolor);
 	percentage(pickedcolor);
+	easybtn.style.color = "white";
+	easybtn.style.backgroundColor = "#6798FF";
+	hardbtn.style.color = "#6798FF";
+	mediumbtn.style.color = "#6798FF";
+	heading.textContent = pickedcolor;
 	resetbutton.style.color = "#6798FF";
 	resetbutton.style.backgroundColor = "white";
-	main();
 	
-});
+percentage(pickedcolor);
+	for(var i=0;i<squares.length;i++){
+		if (i<6){
+			squares[i].style.backgroundColor = colors[i];
+			squares[i].addEventListener("click",function(){
+				var clickedcolor = this.style.background;
+				this.textContent = ""
+				if (clickedcolor === pickedcolor){
+					heading.textContent = clickedcolor;
+					res.textContent = "CORRECT ";
+					colorall(clickedcolor);
+					
+					for(var i=6;i<squares.length;i++){
+						squares[i].style.backgroundColor = "#232323";
+					}
+					heading2.style.background = clickedcolor;
+					heading3.style.backgroundColor = clickedcolor;
+					resetbutton.textContent = "PLAYAGAIN";
+				}
+				else{
+					this.style.background = "#232323";
+					res.textContent = "TRY AGAIN ";
+				}
+			});
+		}
+		else{
+			squares[i].style.backgroundColor = "#232323";
+		}
+}
 
 
 
