@@ -10,6 +10,7 @@ var u = 0,g = 1;
 var red = document.querySelector(".red"),green = document.querySelector(".green"),blue = document.querySelector(".blue");
 var index = [1,2,3,4,5,6,7,8,9];
 heading.textContent = pickedcolor;
+percentage(pickedcolor);
 hardbtn.style.color = "white";
 easybtn.style.color = "#6798FF";
 main();
@@ -57,7 +58,7 @@ easybtn.addEventListener("click",function(){
 			squares[i].style.backgroundColor = "#232323";
 		}
 	}
-		percentage(pickedcolor);
+// 		percentage(pickedcolor);
 });
 hardbtn.addEventListener("click",function(){
 	u = 0;
@@ -74,9 +75,8 @@ hardbtn.addEventListener("click",function(){
 	resetbutton.style.color = "#6798FF";
 	resetbutton.style.backgroundColor = "white";
 	main();
-	percentage(pickedcolor);
+// 	percentage(pickedcolor);
 });
-
 
 
 
@@ -145,7 +145,7 @@ resetbutton.addEventListener("click",function(){
 	easybtn.style.color = "#6798FF";
 	easybtn.style.backgroundColor = "white";
 	hardbtn.style.backgroundColor = "#6798FF";
-	percentage(pickedcolor);
+// 	percentage(pickedcolor);
 	// resetbutton.style.color = "white";
 	// resetbutton.style.backgroundColor ="#6798FF" ;
 })
