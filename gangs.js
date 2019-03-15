@@ -183,8 +183,9 @@ for(var i=4;i<pickedcolor.length;i++){
 			gr= gr + pickedcolor[i];
 		else if (cu === 2){
 			b+=pickedcolor[i];
-			break;
 			}	
+		else
+			break;
 		}
 	else	{
 		i++;
@@ -194,8 +195,11 @@ for(var i=4;i<pickedcolor.length;i++){
 r = Number(r);
 gr = Number(gr);
 b = Number(b);
-var total = r+gr+b
-red.textContent = r/total;
-green.textContent = gr/total;
-blue.textContent = b/total;
+var total = r+gr+b;
+r = r/total;
+gr = gr/total;
+b = b/total;
+red.textContent = r;
+green.textContent = gr;
+blue.textContent = b;
 
