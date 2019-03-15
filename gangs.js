@@ -217,10 +217,24 @@ for(var i=4;i<pickedcolor.length;i++){
 r = Number(r);
 gre = Number(gre);
 b = Number(b);
+
 var total = r+gre+b;
 r = (r/total)*100;
 gre = (gre/total)*100;
 b = (b/total)*100;
+
+
+r = String(r)
+r.slice(0,0+r.indexof(".")+2);
+r= Number(r);
+gre = String(gre)
+gre.slice(0,0+gre.indexof(".")+2);
+gre = Number(gre);
+b = String(b)
+b.slice(0,0+b.indexof(".")+2);
+b = Number(b);
+
+
 red.textContent = r;
 green.textContent = gre;
 blue.textContent = b;
