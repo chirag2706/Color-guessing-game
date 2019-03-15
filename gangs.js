@@ -57,7 +57,7 @@ easybtn.addEventListener("click",function(){
 			squares[i].style.backgroundColor = "#232323";
 		}
 	}
-		percentage();
+		percentage(pickedcolor);
 });
 hardbtn.addEventListener("click",function(){
 	u = 0;
@@ -74,7 +74,7 @@ hardbtn.addEventListener("click",function(){
 	resetbutton.style.color = "#6798FF";
 	resetbutton.style.backgroundColor = "white";
 	main();
-	percentage();
+	percentage(pickedcolor);
 });
 
 
@@ -145,7 +145,7 @@ resetbutton.addEventListener("click",function(){
 	easybtn.style.color = "#6798FF";
 	easybtn.style.backgroundColor = "white";
 	hardbtn.style.backgroundColor = "#6798FF";
-	percentage();
+	percentage(pickedcolor);
 	// resetbutton.style.color = "white";
 	// resetbutton.style.backgroundColor ="#6798FF" ;
 })
@@ -179,7 +179,7 @@ hardbtn.addEventListener("mouseover",function(){
 	}
 });
 // function percentage(){
-function percentage(){
+function percentage(pickedcolor){
 var r='',gre='',b='',cu=0;
 for(var i=4;i<pickedcolor.length;i++){
 	if (pickedcolor[i]!=','){
@@ -202,9 +202,9 @@ r = Number(r);
 gre = Number(gre);
 b = Number(b);
 var total = r+gre+b;
-r = r/total;
-gre = gre/total;
-b = b/total;
+r = (r/total)*100;
+gre = (gre/total)*100;
+b = (b/total)*100;
 red.textContent = r;
 green.textContent = gre;
 blue.textContent = b;
