@@ -225,13 +225,13 @@ b = (b/total)*100;
 
 
 r = String(r)
-r.slice(0,0+r.indexof(".")+2);
+r=r.slice(0,0+r.indexof(".")+2);
 r= Number(r);
 gre = String(gre)
-gre.slice(0,0+gre.indexof(".")+2);
+gre=gre.slice(0,0+gre.indexof(".")+2);
 gre = Number(gre);
 b = String(b)
-b.slice(0,0+b.indexof(".")+2);
+b=b.slice(0,0+b.indexof(".")+2);
 b = Number(b);
 
 
