@@ -10,7 +10,6 @@ var u = 0,g = 1;
 var red = document.querySelector(".red"),green = document.querySelector(".green"),blue = document.querySelector(".blue");
 var index = [1,2,3,4,5,6,7,8,9];
 heading.textContent = pickedcolor;
-// percentage(pickedcolor);
 hardbtn.style.color = "white";
 easybtn.style.color = "#6798FF";
 main();
@@ -58,7 +57,7 @@ easybtn.addEventListener("click",function(){
 			squares[i].style.backgroundColor = "#232323";
 		}
 	}
-// 		percentage(pickedcolor);
+		percentage(pickedcolor);
 });
 hardbtn.addEventListener("click",function(){
 	u = 0;
@@ -146,7 +145,7 @@ resetbutton.addEventListener("click",function(){
 	easybtn.style.color = "#6798FF";
 	easybtn.style.backgroundColor = "white";
 	hardbtn.style.backgroundColor = "#6798FF";
-// 	percentage(pickedcolor);
+	percentage(pickedcolor);
 	// resetbutton.style.color = "white";
 	// resetbutton.style.backgroundColor ="#6798FF" ;
 })
@@ -180,9 +179,55 @@ hardbtn.addEventListener("mouseover",function(){
 	}
 });
 // function percentage(){
-// function percentage(pickedcolor){
+function percentage(pickedcolor){
+var r='',gre='',b='',cu=0;
+for(var i=4;i<pickedcolor.length;i++){
+	// if (pickedcolor[i]!=','){
+	// 	if (cu === 0)
+	// 	r = r+pickedcolor[i];
+	// 	else if (cu === 1)
+	// 		gre= gre + pickedcolor[i];
+	// 	else if (cu === 2){
+	// 		b= b + pickedcolor[i];
+	// 		}	
+	// 	else
+	// 		break;
+	// 	}
+	// else	{
+	// 	i++;
+	// 	cu+=1;
+	// 		}
+	if (pickedcolor[i]==","){
+		i+=2;
+		cu+=1;
+	}else{
+		if (cu === 0)
+			r = r+pickedcolor[i];
+		else if (cu === 1)
+			gre = gre+pickedcolor[i];
+		else if (cu == 2){
+			if (pickedcolor[i] == ")")
+				break;
+			else
+			b = b+pickedcolor[i];
+		}
+			
+	}
+	}
+r = Number(r);
+gre = Number(gre);
+b = Number(b);
 
-// }
+var total = r+gre+b;
+r = (r/total)*100;
+gre = (gre/total)*100;
+b = (b/total)*100;
 
+
+
+red.textContent = r;
+green.textContent = gre;
+blue.textContent = b;
+}
 
 
