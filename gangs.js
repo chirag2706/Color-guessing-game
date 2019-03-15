@@ -196,9 +196,9 @@ function percentage(pickedcolor){
 	gre = Number(gre)
 	b = Number(b);
 	total = r+gre+b;
-	r = Math.round(r/total);
-	gre = Math.round(gre/total);
-	b = Math.round(b/total);
+	r = Math.round((r/total)*100);
+	gre = Math.round((gre/total)*100);
+	b = Math.round((b/total)*100);
 	red.textContent  = r;
 	green.textContent = gre;
 	blue.textContent = b;
