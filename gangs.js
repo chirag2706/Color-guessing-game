@@ -98,7 +98,9 @@ for(var i=0;i<colors.length;i++){
 			res.textContent = "TRY AGAIN ";
 		}
 	});
+	
 }
+	percentage();
 }
 function colorall(color){
 	for(var i= 0;i<squares.length;i++){
@@ -141,6 +143,7 @@ resetbutton.addEventListener("click",function(){
 	easybtn.style.color = "#6798FF";
 	easybtn.style.backgroundColor = "white";
 	hardbtn.style.backgroundColor = "#6798FF";
+	
 	// resetbutton.style.color = "white";
 	// resetbutton.style.backgroundColor ="#6798FF" ;
 })
@@ -174,13 +177,14 @@ hardbtn.addEventListener("mouseover",function(){
 	}
 });
 // function percentage(){
-var r='',gr='',b='',cu=0;
+function percentage(){
+var r='',gre='',b='',cu=0;
 for(var i=4;i<pickedcolor.length;i++){
 	if (pickedcolor[i]!=','){
 		if (cu === 0)
 		r = r+pickedcolor[i];
 		else if (cu === 1)
-			gr= gr + pickedcolor[i];
+			gre= gre + pickedcolor[i];
 		else if (cu === 2){
 			b+=pickedcolor[i];
 			}	
@@ -193,7 +197,7 @@ for(var i=4;i<pickedcolor.length;i++){
 			}
 	}
 r = Number(r);
-gr = Number(gr);
+gre = Number(gre);
 b = Number(b);
 var total = r+gr+b;
 r = r/total;
@@ -202,4 +206,6 @@ b = b/total;
 red.textContent = r;
 green.textContent = gr;
 blue.textContent = b;
+}
+
 
